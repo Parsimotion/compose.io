@@ -30,6 +30,11 @@ Client.prototype.database = function (db) {
   return this;
 };
 
+Client.prototype.databases = function () {
+  this._segments.push('databases');
+  return this;
+};
+
 Client.prototype.deployments = function () {
   this._segments.push('deployments');
   return this;
