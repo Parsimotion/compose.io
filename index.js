@@ -30,11 +30,6 @@ Client.prototype.database = function (db) {
   return this;
 };
 
-Client.prototype.databases = function () {
-  this._segments.push('databases');
-  return this;
-};
-
 Client.prototype.deployments = function () {
   this._segments.push('deployments');
   return this;
@@ -51,8 +46,6 @@ Client.prototype.elastic = function () {
 };
 
 Client.prototype.end = function (callback) {
-  var url = this.url();
-
   request[this._method](url)
     .set('Accept-Version', this._version)
     .set('Authorization', 'Bearer ' + this._accessToken)
@@ -112,4 +105,21 @@ Client.prototype.version = function (version) {
 
 module.exports = function () {
   return new Client();
+};
+
+// ---
+
+Client.prototype.databases = function () {
+  this._segments.push('databases');
+  return this;
+};
+
+Client.prototype.mongodb = function () {
+  this._segments.push('mongodb');
+  return this;
+};
+
+Client.prototype.collections = function () {
+  this._segments.push('collections');
+  return this;
 };
