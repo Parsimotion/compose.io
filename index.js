@@ -46,7 +46,9 @@ Client.prototype.elastic = function () {
 };
 
 Client.prototype.end = function (callback) {
-  request[this._method](url())
+  var url = this.url();
+
+  request[this._method](url)
     .set('Accept-Version', this._version)
     .set('Authorization', 'Bearer ' + this._accessToken)
     .send(this._data)
