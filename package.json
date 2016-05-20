@@ -19,7 +19,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "name": "compose.io",
+  "name": "compose.io-api",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
